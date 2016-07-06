@@ -1,0 +1,599 @@
+---
+---
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+<form class="form-horizontal">
+<fieldset>
+    <!-- Form Name -->
+    <legend>Basics</legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="STRING_CONFIG_H_AUTHOR">Author</label>
+      <div class="col-md-4">
+      <input id="STRING_CONFIG_H_AUTHOR" name="STRING_CONFIG_H_AUTHOR" type="text" placeholder="(none, default config)" class="form-control input-md">
+      <span class="help-block">Who made the changes.</span>
+      </div>
+    </div>
+
+    <!-- Prepended checkbox -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="STRING_SPLASH_LINE1">Splash line 1</label>
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-addon">
+              <input type="checkbox">
+          </span>
+          <input id="STRING_SPLASH_LINE1" name="STRING_SPLASH_LINE1" class="form-control" type="text" placeholder="SHORT_BUILD_VERSION">
+        </div>
+        <p class="help-block">Will be shown during bootup in line 1</p>
+      </div>
+    </div>
+
+    <!-- Prepended checkbox -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="STRING_SPLASH_LINE2">Splash line 2</label>
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-addon">
+              <input type="checkbox">
+          </span>
+          <input id="STRING_SPLASH_LINE2" name="STRING_SPLASH_LINE2" class="form-control" type="text" placeholder="STRING_DISTRIBUTION_DATE">
+        </div>
+        <p class="help-block">Will be shown during bootup in line 2</p>
+      </div>
+    </div>
+</fieldset>
+
+<fieldset>
+  <!-- Form Name -->
+  <legend>Machine</legend>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="MOTHERBOARD">Board type</label>
+    <div class="col-md-4">
+      <select id="MOTHERBOARD" name="MOTHERBOARD" class="form-control">
+        <option value="1">Option one</option>
+        <option value="2">Option two</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="BAUDRATE">Baudrate</label>
+    <div class="col-md-4">
+      <select id="BAUDRATE" name="BAUDRATE" class="form-control">
+        <option value="2400">2400</option>
+        <option value="9600">9600</option>
+        <option value="19200">19200</option>
+        <option value="38400">38400</option>
+        <option value="57600">57600</option>
+        <option value="115200">115200</option>
+        <option value="250000">250000</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Prepended checkbox -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="CUSTOM_MACHINE_NAME">Custom name</label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <span class="input-group-addon">
+            <input type="checkbox">
+        </span>
+        <input id="CUSTOM_MACHINE_NAME" name="CUSTOM_MACHINE_NAME" class="form-control" type="text" placeholder="3D Printer">
+      </div>
+      <p class="help-block">Optional custom name for your RepStrap or other custom machine</p>
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="MACHINE_UUID">UUID</label>
+    <div class="col-md-4">
+    <input id="MACHINE_UUID" name="MACHINE_UUID" type="text" placeholder="00000000-0000-0000-0000-000000000000" class="form-control input-md">
+    <span class="help-block">Set a unique identifier for this printer</span>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset>
+  <!-- Form Name -->
+  <legend>Tool</legend>
+
+  <!-- Multiple Checkboxes -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="SINGLENOZZLE">Single Nozzle</label>
+    <div class="col-md-4">
+    <div class="checkbox">
+      <label for="SINGLENOZZLE-0">
+        <input type="checkbox" name="SINGLENOZZLE" id="SINGLENOZZLE-0" value="True">
+        True
+      </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Multiple Radios (inline) -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="EXTRUDERS">Number of Extruders</label>
+    <div class="col-md-4">
+      <label class="radio-inline" for="EXTRUDERS-0">
+        <input type="radio" name="EXTRUDERS" id="EXTRUDERS-0" value="1" checked="checked">
+        1
+      </label>
+      <label class="radio-inline" for="EXTRUDERS-1">
+        <input type="radio" name="EXTRUDERS" id="EXTRUDERS-1" value="2">
+        2
+      </label>
+      <label class="radio-inline" for="EXTRUDERS-2">
+        <input type="radio" name="EXTRUDERS" id="EXTRUDERS-2" value="3">
+        3
+      </label>
+      <label class="radio-inline" for="EXTRUDERS-3">
+        <input type="radio" name="EXTRUDERS" id="EXTRUDERS-3" value="4">
+        4
+      </label>
+    </div>
+  </div>
+
+  <!-- Prepended text-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="HOTEND_OFFSET_X">Nozzle offset</label>
+    <div class="col-md-4">
+      <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">X</span>
+            <input id="HOTEND_OFFSET_X" name="HOTEND_OFFSET_X" class="form-control" placeholder="0.0" type="text">
+          </div>
+      </div>
+      <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">Y</span>
+            <input id="HOTEND_OFFSET_Y" name="HOTEND_OFFSET_Y" class="form-control" placeholder="0.0" type="text">
+          </div>
+      </div>
+      <p class="help-block">(in mm) for each extruder, offset of the hotend</p>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset>
+  <!-- Form Name -->
+  <legend>Power supply</legend>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="POWER_SUPPLY">Power supply</label>
+    <div class="col-md-4">
+      <select id="POWER_SUPPLY" name="POWER_SUPPLY" class="form-control">
+        <option value="1">ATX</option>
+        <option value="2">X-Box 360</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Multiple Checkboxes -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="PS_DEFAULT_OFF">Power default off</label>
+    <div class="col-md-4">
+    <div class="checkbox">
+      <label for="PS_DEFAULT_OFF-0">
+        <input type="checkbox" name="PS_DEFAULT_OFF" id="PS_DEFAULT_OFF-0" value="True">
+        True
+      </label>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset>
+  <!-- Form Name -->
+  <legend>Thermal</legend>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="TEMP_SENSOR_0">Extruder 1</label>
+    <div class="col-md-4">
+      <select id="TEMP_SENSOR_0" name="TEMP_SENSOR_0" class="form-control">
+        <option value="1">Option one</option>
+        <option value="2">Option two</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="HEATER_0_MINTEMP">Min temperature</label>
+    <div class="col-md-4">
+    <input id="HEATER_0_MINTEMP" name="HEATER_0_MINTEMP" type="text" placeholder="5" class="form-control input-md">
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="HEATER_0_MAXTEMP">Max temperature</label>
+    <div class="col-md-4">
+    <input id="HEATER_0_MAXTEMP" name="HEATER_0_MAXTEMP" type="text" placeholder="275" class="form-control input-md">
+    </div>
+  </div>
+
+  <!-- Divider-->
+  <div class="form-group">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+  </div>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="TEMP_SENSOR_1">Extruder 2</label>
+    <div class="col-md-4">
+      <select id="TEMP_SENSOR_1" name="TEMP_SENSOR_1" class="form-control">
+        <option value="1">Option one</option>
+        <option value="2">Option two</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="HEATER_1_MINTEMP">Min temperature</label>
+    <div class="col-md-4">
+    <input id="HEATER_1_MINTEMP" name="HEATER_1_MINTEMP" type="text" placeholder="5" class="form-control input-md">
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="HEATER_1_MAXTEMP">Max temperature</label>
+    <div class="col-md-4">
+    <input id="HEATER_1_MAXTEMP" name="HEATER_1_MAXTEMP" type="text" placeholder="275" class="form-control input-md">
+    </div>
+  </div>
+
+  <!-- Prepended checkbox -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="MAX_REDUNDANT_TEMP_SENSOR_DIFF">Redundant sensor</label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <span class="input-group-addon">
+            <input type="checkbox">
+        </span>
+        <input id="MAX_REDUNDANT_TEMP_SENSOR_DIFF" name="MAX_REDUNDANT_TEMP_SENSOR_DIFF" class="form-control" type="text" placeholder="10">
+      </div>
+      <p class="help-block">This makes temp sensor 2 a redundant sensor for sensor 1. If the temperatures difference between these sensors is to high the print will be aborted.</p>
+    </div>
+  </div>
+
+  <!-- Divider-->
+  <div class="form-group">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+  </div>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="TEMP_SENSOR_2">Extruder 3</label>
+    <div class="col-md-4">
+      <select id="TEMP_SENSOR_2" name="TEMP_SENSOR_2" class="form-control">
+        <option value="1">Option one</option>
+        <option value="2">Option two</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="HEATER_2_MINTEMP">Min temperature</label>
+    <div class="col-md-4">
+    <input id="HEATER_2_MINTEMP" name="HEATER_2_MINTEMP" type="text" placeholder="5" class="form-control input-md">
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="HEATER_2_MAXTEMP">Max temperature</label>
+    <div class="col-md-4">
+    <input id="HEATER_2_MAXTEMP" name="HEATER_2_MAXTEMP" type="text" placeholder="275" class="form-control input-md">
+    </div>
+  </div>
+
+  <!-- Divider-->
+  <div class="form-group">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+  </div>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="TEMP_SENSOR_3">Extruder 4</label>
+    <div class="col-md-4">
+      <select id="TEMP_SENSOR_3" name="TEMP_SENSOR_3" class="form-control">
+        <option value="1">Option one</option>
+        <option value="2">Option two</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="HEATER_3_MINTEMP">Min temperature</label>
+    <div class="col-md-4">
+    <input id="HEATER_3_MINTEMP" name="HEATER_3_MINTEMP" type="text" placeholder="5" class="form-control input-md">
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="HEATER_3_MAXTEMP">Max temperature</label>
+    <div class="col-md-4">
+    <input id="HEATER_3_MAXTEMP" name="HEATER_3_MAXTEMP" type="text" placeholder="275" class="form-control input-md">
+    </div>
+  </div>
+
+  <!-- Divider-->
+  <div class="form-group">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+  </div>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="TEMP_SENSOR_BED">Bed</label>
+    <div class="col-md-4">
+      <select id="TEMP_SENSOR_BED" name="TEMP_SENSOR_BED" class="form-control">
+        <option value="1">Option one</option>
+        <option value="2">Option two</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="BED_MINTEMP">Min temperature</label>
+    <div class="col-md-4">
+    <input id="BED_MINTEMP" name="BED_MINTEMP" type="text" placeholder="5" class="form-control input-md">
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="BED_MAXTEMP">Max temperature</label>
+    <div class="col-md-4">
+    <input id="BED_MAXTEMP" name="BED_MAXTEMP" type="text" placeholder="150" class="form-control input-md">
+    </div>
+  </div>
+</fieldset>
+
+
+<fieldset>
+  <!-- Form Name -->
+  <legend>Hysteresis</legend>
+
+  <!-- Appended Input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="TEMP_RESIDENCY_TIME">Residency time</label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <input id="TEMP_RESIDENCY_TIME" name="TEMP_RESIDENCY_TIME" class="form-control" placeholder="10" type="text">
+        <span class="input-group-addon">seconds</span>
+      </div>
+
+    </div>
+  </div>
+  <!-- Appended Input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="TEMP_HYSTERESIS">Hysteresis</label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <input id="TEMP_HYSTERESIS" name="TEMP_HYSTERESIS" class="form-control" placeholder="3" type="text">
+        <span class="input-group-addon">degC</span>
+      </div>
+
+    </div>
+  </div>
+  <!-- Appended Input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="TEMP_WINDOW">Window</label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <input id="TEMP_WINDOW" name="TEMP_WINDOW" class="form-control" placeholder="1" type="text">
+        <span class="input-group-addon">degC</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Divider-->
+  <div class="form-group">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+  </div>
+
+  <!-- Appended Input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="TEMP_BED_RESIDENCY_TIME">Bed residency time</label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <input id="TEMP_BED_RESIDENCY_TIME" name="TEMP_BED_RESIDENCY_TIME" class="form-control" placeholder="10" type="text">
+        <span class="input-group-addon">seconds</span>
+      </div>
+
+    </div>
+  </div>  <!-- Appended Input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="TEMP_BED_HYSTERESIS">Bed hysteresis</label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <input id="TEMP_BED_HYSTERESIS" name="TEMP_BED_HYSTERESIS" class="form-control" placeholder="3" type="text">
+        <span class="input-group-addon">degC</span>
+      </div>
+
+    </div>
+  </div>
+  <!-- Appended Input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="TEMP_BED_WINDOW">Bed window</label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <input id="TEMP_BED_WINDOW" name="TEMP_BED_WINDOW" class="form-control" placeholder="1" type="text">
+        <span class="input-group-addon">degC</span>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset>
+  <!-- Form Name -->
+  <legend>PID</legend>
+
+  <!-- Multiple Checkboxes -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="PIDTEMP">PID</label>
+    <div class="col-md-4">
+    <div class="checkbox">
+      <label for="PIDTEMP-0">
+        <input type="checkbox" name="PIDTEMP" id="PIDTEMP-0" value="1">
+        Enabled
+      </label>
+    </div>
+    </div>
+  </div>
+
+  <!-- Appended Input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="PID_FUNCTIONAL_RANGE">Functional range</label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <input id="PID_FUNCTIONAL_RANGE" name="PID_FUNCTIONAL_RANGE" class="form-control" placeholder="25" type="text">
+        <span class="input-group-addon">degC</span>
+      </div>
+
+    </div>
+  </div>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="BANG_MAX">Max PWM</label>
+    <div class="col-md-4">
+    <input id="BANG_MAX" name="BANG_MAX" type="text" placeholder="255" class="form-control input-md">
+    <span class="help-block">When outside PID_FUNCTIONAL_RANGE</span>
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="PID_MAX">Max PWM</label>
+    <div class="col-md-4">
+    <input id="PID_MAX" name="PID_MAX" type="text" placeholder="255" class="form-control input-md">
+    <span class="help-block">When inside PID_FUNCTIONAL_RANGE</span>
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="PID_INTEGRAL_DRIVE_MAX">Max Integral</label>
+    <div class="col-md-4">
+    <input id="PID_INTEGRAL_DRIVE_MAX" name="PID_INTEGRAL_DRIVE_MAX" type="text" placeholder="255" class="form-control input-md">
+
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="K1">Smoothing factor</label>
+    <div class="col-md-4">
+    <input id="K1" name="K1" type="text" placeholder="0.95" class="form-control input-md">
+
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form">
+    <div class="form-group">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div class="col-md-4">
+          <!-- Prepended text-->
+          <div class="form-group">
+            <div class="col-md-12">
+              <div class="input-group">
+                <span class="input-group-addon">Kp</span>
+                <input id="DEFAULT_Kp" name="DEFAULT_Kp" class="form-control" placeholder="22.2" type="text">
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <!-- Prepended text-->
+          <div class="form-group">
+            <div class="col-md-12">
+              <div class="input-group">
+                <span class="input-group-addon">Ki</span>
+                <input id="DEFAULT_Ki" name="DEFAULT_Ki" class="form-control" placeholder="1.08" type="text">
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <!-- Prepended text-->
+          <div class="form-group">
+            <div class="col-md-12">
+              <div class="input-group">
+                <span class="input-group-addon">Kd</span>
+                <input id="DEFAULT_Kd" name="DEFAULT_Kd" class="form-control" placeholder="114" type="text">
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Multiple Checkboxes -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="_PID_BOOLEAN_OPTIONS"></label>
+    <div class="col-md-4">
+    <div class="checkbox">
+      <label for="_PID_BOOLEAN_OPTIONS-0">
+        <input type="checkbox" name="_PID_BOOLEAN_OPTIONS" id="_PID_BOOLEAN_OPTIONS-0" value="PID_AUTOTUNE_MENU">
+        Add PID Autotune to the LCD "Temperature" menu
+      </label>
+    </div>
+    <div class="checkbox">
+      <label for="_PID_BOOLEAN_OPTIONS-1">
+        <input type="checkbox" name="_PID_BOOLEAN_OPTIONS" id="_PID_BOOLEAN_OPTIONS-1" value="PID_DEBUG">
+        Sends debug data to the serial port
+      </label>
+    </div>
+    <div class="checkbox">
+      <label for="_PID_BOOLEAN_OPTIONS-2">
+        <input type="checkbox" name="_PID_BOOLEAN_OPTIONS" id="_PID_BOOLEAN_OPTIONS-2" value="PID_OPENLOOP">
+        Puts PID in open loop. M104/M140 sets the output power from 0 to PID_MAX
+      </label>
+    </div>
+    <div class="checkbox">
+      <label for="_PID_BOOLEAN_OPTIONS-3">
+        <input type="checkbox" name="_PID_BOOLEAN_OPTIONS" id="_PID_BOOLEAN_OPTIONS-3" value="SLOW_PWM_HEATERS">
+        PWM with very low frequency (roughly 0.125Hz=8s)
+      </label>
+    </div>
+    </div>
+  </div>
+</fieldset>
+
+
+</form>
+
+        </div>
+    </div>
+</div>
