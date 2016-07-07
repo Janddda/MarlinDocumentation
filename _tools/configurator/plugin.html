@@ -1,0 +1,106 @@
+---
+---
+<div class='container'>
+  <div class='row'>
+    <div class='col-lg-12'>
+      <div ng-controller='ConfiguratorController'>
+        <form>
+          <p>bla bla bla</p>
+          <div sf-schema='schema' sf-form='form' sf-model='model'></div>
+          <input type='submit' value='Submit'>
+          <button type='button' ng-click='goBack()'>Cancel</button>
+        </form>
+
+        <pre>model = <span ng-bind='model | json'></span></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+head.ready(function() {
+  angular.element(document).ready(function() {
+    console.log('head.ready(schema-form.min.js)');
+
+    var app = angular.module('Marlin', ['schemaForm'])
+    .controller('ConfiguratorController', function($scope) {
+      console.log('angular.module()');
+
+      $scope.schema = { 'type': 'object',
+        'required': [
+          'STRING_CONFIG_H_AUTHOR'
+        ],
+        'properties': {
+          'STRING_CONFIG_H_AUTHOR': {
+            'title': 'Author',
+            'description': 'Who made the changes.',
+            'type': 'string',
+            'pattern': '^[^/]*$',
+            'minLength': 2
+          },
+          'STRING_SPLASH_LINE1_CHECKBOX': {
+            'title': 'Bootsplash line 1',
+            'type': 'boolean',
+            'default': true
+          },
+          'STRING_SPLASH_LINE1': {
+            'description': 'Will be shown during bootup in line 1',
+            'type': 'string'
+          },
+          'STRING_SPLASH_LINE2_CHECKBOX': {
+            'title': 'Bootsplash line 2',
+            'type': 'boolean',
+            'default': false
+          },
+          'STRING_SPLASH_LINE2': {
+            'notitle': true,
+            'description': 'Will be shown during bootup in line 2',
+            'type': 'string'
+          },
+        }
+      };
+
+      $scope.form = [{
+        'type': 'fieldset',
+        'title': 'Configuration',
+        'items': [{
+          'type': 'tabs',
+          'tabs': [{
+            'title': 'Basics',
+            'items': [
+              {
+                'key': 'STRING_CONFIG_H_AUTHOR',
+                'placeholder': '(none, default config)',
+              },
+              'STRING_SPLASH_LINE1_CHECKBOX', {
+                'type': 'conditional',
+                'condition': 'model.STRING_SPLASH_LINE1_CHECKBOX',
+                'items': [{
+                  'notitle': true,
+                  'key': 'STRING_SPLASH_LINE1',
+                  'placeholder': 'SHORT_BUILD_VERSION'
+                }]
+              },
+              'STRING_SPLASH_LINE2_CHECKBOX', {
+                'type': 'conditional',
+                'condition': 'model.STRING_SPLASH_LINE2_CHECKBOX',
+                'items': [{
+                  'notitle': true,
+                  'key': 'STRING_SPLASH_LINE2',
+                  'placeholder': 'STRING_DISTRIBUTION_DATE'
+                }]
+              },
+            ]
+          }]
+        }]
+      }];
+
+      $scope.model = {};
+
+    });
+
+    angular.bootstrap(document, ['Marlin']);
+
+  });
+});
+</script>
